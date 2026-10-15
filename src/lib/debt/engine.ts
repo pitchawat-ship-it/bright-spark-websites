@@ -39,7 +39,8 @@ export function simulate(p:Profile,debts:Debt[],strategy:Strategy):Plan {
 export type Payment = {id:string;debtId:string;date:string;amount:number;period:string;interest:number;note:string;source:'manual'};
 export function reconcile(debts:Debt[],payments:Payment[],plan:Plan,debtId:string,amount:number,date:string,note:string):{debts:Debt[];payment:Payment} {
  if(!Number.isFinite(amount)||amount<=0)throw new Error('Enter a positive payment amount.');
- if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||new Date(date+'T00:00:00Z').toISOString().slice(0,10)!==date||date>new Date().toISOString().slice(0,10))throw new Error('Choose a valid payment date, not in the future.');
+ const parsed=new Date(date+'T00:00:00Z');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(parsed.getTime())||parsed.toISOString().slice(0,10)!==date||date>new Date().toISOString().slice(0,10))throw new Error('Choose a valid payment date, not in the future.');
  const debt=debts.find(x=>x.id===debtId);if(!debt)throw new Error('Debt not found.');
  const period=date.slice(0,7);const row=plan.rows.find(x=>x.debtId===debtId&&x.period===period);if(!row)throw new Error('No confirmed schedule exists for this payment month. Review your plan.');
  if(payments.some(x=>x.debtId===debtId&&x.date===date&&x.amount===amount))throw new Error('This payment has already been recorded.');

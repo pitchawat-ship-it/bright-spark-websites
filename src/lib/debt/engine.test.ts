@@ -3,6 +3,8 @@ import { assessment,simulate,reconcile,type Profile,type Debt } from './engine';
 const p:Profile={name:'Test',income:2000,expenses:1000,commitments:0,reserve:100,savings:100,currency:'USD',incomeType:'fixed',start:'2026-10'};
 const debts:[Debt,Debt,Debt]=[{id:'card',name:'Card',balance:3200,apr:22,minimum:100,dueDay:20,type:'standard',years:0,days:30,notes:''},{id:'loan',name:'Loan',balance:5800,apr:9,minimum:180,dueDay:25,type:'standard',years:0,days:30,notes:''},{id:'installment',name:'Installment',balance:1500,apr:5,minimum:70,dueDay:28,type:'standard',years:0,days:30,notes:''}];
 describe('Financial safety and supplied simulation logic',()=>{
+ it('matches the original Python full-term avalanche fixture',()=>expect(simulate(p,debts,'avalanche')).toMatchObject({months:14,interest:680.49,total:11180.49}));
+ it('matches the original Python full-term snowball fixture',()=>expect(simulate(p,debts,'snowball')).toMatchObject({months:15,interest:806.96,total:11306.96}));
  it('protects reserve and savings in available budget',()=>{expect(assessment(p,debts)).toMatchObject({budget:800,minimum:350,extra:450,total:10500});});
  it('refuses hardship when required minimums cannot be covered',()=>{const low={...p,income:1500};expect(assessment(low,debts).shortfall).toBe(50);expect(()=>simulate(low,debts,'avalanche')).toThrow('minimum payments');});
  it('does not silently turn unknown APR into zero',()=>expect(()=>simulate(p,[{...debts[0],apr:null}],'avalanche')).toThrow('unknown'));
