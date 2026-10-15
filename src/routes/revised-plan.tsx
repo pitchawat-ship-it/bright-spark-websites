@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { RevisedPlan } from '@/components/debt-views';
+export const Route=createFileRoute('/revised-plan')({head:()=>({meta:[{title:'Revised plan comparison | AI Debt Recovery'},{name:'description',content:'Compare revised repayment estimates with your previously confirmed plan.'},{property:'og:title',content:'Revised plan comparison | AI Debt Recovery'},{property:'og:description',content:'Compare revised repayment estimates with your previously confirmed plan.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:RevisedPlan});

@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { SettingsView } from '@/components/debt-views';
+export const Route=createFileRoute('/settings')({head:()=>({meta:[{title:'Settings and privacy | AI Debt Recovery'},{name:'description',content:'Manage financial workspace privacy, data exports and account preferences.'},{property:'og:title',content:'Settings and privacy | AI Debt Recovery'},{property:'og:description',content:'Manage financial workspace privacy, data exports and account preferences.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:SettingsView});

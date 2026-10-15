@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Assessment } from '@/components/debt-views';
+export const Route=createFileRoute('/assessment')({head:()=>({meta:[{title:'Financial assessment | AI Debt Recovery'},{name:'description',content:'Build a realistic repayment budget from your income, expenses, savings and emergency reserve.'},{property:'og:title',content:'Financial assessment | AI Debt Recovery'},{property:'og:description',content:'Build a realistic repayment budget from your income, expenses, savings and emergency reserve.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:Assessment});
