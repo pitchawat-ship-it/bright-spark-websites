@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Progress } from '@/components/debt-views';
+export const Route=createFileRoute('/progress')({head:()=>({meta:[{title:'Progress and history | AI Debt Recovery'},{name:'description',content:'Track verified manual payments and review previous repayment plan versions.'},{property:'og:title',content:'Progress and history | AI Debt Recovery'},{property:'og:description',content:'Track verified manual payments and review previous repayment plan versions.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:Progress});

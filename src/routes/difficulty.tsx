@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Difficulty } from '@/components/debt-views';
+export const Route=createFileRoute('/difficulty')({head:()=>({meta:[{title:'Financial check-in | AI Debt Recovery'},{name:'description',content:'Review financial changes and reassess your repayment capacity without judgment.'},{property:'og:title',content:'Financial check-in | AI Debt Recovery'},{property:'og:description',content:'Review financial changes and reassess your repayment capacity without judgment.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:Difficulty});

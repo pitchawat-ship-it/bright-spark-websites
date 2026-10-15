@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Welcome } from '@/components/debt-views';
+export const Route=createFileRoute('/welcome')({head:()=>({meta:[{title:'Your fresh start | AI Debt Recovery'},{name:'description',content:'Start your financial assessment and find a clearer path through debt repayment.'},{property:'og:title',content:'Your fresh start | AI Debt Recovery'},{property:'og:description',content:'Start your financial assessment and find a clearer path through debt repayment.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:Welcome});

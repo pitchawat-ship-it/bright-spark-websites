@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AssessmentRouteImport } from './routes/assessment'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as DebtsRouteImport } from './routes/debts'
+import { Route as DifficultyRouteImport } from './routes/difficulty'
+import { Route as PaymentRouteImport } from './routes/payment'
+import { Route as PlanRouteImport } from './routes/plan'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as RevisedPlanRouteImport } from './routes/revised-plan'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as StrategiesRouteImport } from './routes/strategies'
+import { Route as WelcomeRouteImport } from './routes/welcome'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AssessmentRoute = AssessmentRouteImport.update({
+  id: '/assessment',
+  path: '/assessment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DebtsRoute = DebtsRouteImport.update({
+  id: '/debts',
+  path: '/debts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DifficultyRoute = DifficultyRouteImport.update({
+  id: '/difficulty',
+  path: '/difficulty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentRoute = PaymentRouteImport.update({
+  id: '/payment',
+  path: '/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanRoute = PlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RevisedPlanRoute = RevisedPlanRouteImport.update({
+  id: '/revised-plan',
+  path: '/revised-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StrategiesRoute = StrategiesRouteImport.update({
+  id: '/strategies',
+  path: '/strategies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WelcomeRoute = WelcomeRouteImport.update({
+  id: '/welcome',
+  path: '/welcome',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assessment': typeof AssessmentRoute
+  '/calendar': typeof CalendarRoute
+  '/debts': typeof DebtsRoute
+  '/difficulty': typeof DifficultyRoute
+  '/payment': typeof PaymentRoute
+  '/plan': typeof PlanRoute
+  '/progress': typeof ProgressRoute
+  '/revised-plan': typeof RevisedPlanRoute
+  '/settings': typeof SettingsRoute
+  '/strategies': typeof StrategiesRoute
+  '/welcome': typeof WelcomeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assessment': typeof AssessmentRoute
+  '/calendar': typeof CalendarRoute
+  '/debts': typeof DebtsRoute
+  '/difficulty': typeof DifficultyRoute
+  '/payment': typeof PaymentRoute
+  '/plan': typeof PlanRoute
+  '/progress': typeof ProgressRoute
+  '/revised-plan': typeof RevisedPlanRoute
+  '/settings': typeof SettingsRoute
+  '/strategies': typeof StrategiesRoute
+  '/welcome': typeof WelcomeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assessment': typeof AssessmentRoute
+  '/calendar': typeof CalendarRoute
+  '/debts': typeof DebtsRoute
+  '/difficulty': typeof DifficultyRoute
+  '/payment': typeof PaymentRoute
+  '/plan': typeof PlanRoute
+  '/progress': typeof ProgressRoute
+  '/revised-plan': typeof RevisedPlanRoute
+  '/settings': typeof SettingsRoute
+  '/strategies': typeof StrategiesRoute
+  '/welcome': typeof WelcomeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/assessment'
+    | '/calendar'
+    | '/debts'
+    | '/difficulty'
+    | '/payment'
+    | '/plan'
+    | '/progress'
+    | '/revised-plan'
+    | '/settings'
+    | '/strategies'
+    | '/welcome'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/assessment'
+    | '/calendar'
+    | '/debts'
+    | '/difficulty'
+    | '/payment'
+    | '/plan'
+    | '/progress'
+    | '/revised-plan'
+    | '/settings'
+    | '/strategies'
+    | '/welcome'
+  id:
+    | '__root__'
+    | '/'
+    | '/assessment'
+    | '/calendar'
+    | '/debts'
+    | '/difficulty'
+    | '/payment'
+    | '/plan'
+    | '/progress'
+    | '/revised-plan'
+    | '/settings'
+    | '/strategies'
+    | '/welcome'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssessmentRoute: typeof AssessmentRoute
+  CalendarRoute: typeof CalendarRoute
+  DebtsRoute: typeof DebtsRoute
+  DifficultyRoute: typeof DifficultyRoute
+  PaymentRoute: typeof PaymentRoute
+  PlanRoute: typeof PlanRoute
+  ProgressRoute: typeof ProgressRoute
+  RevisedPlanRoute: typeof RevisedPlanRoute
+  SettingsRoute: typeof SettingsRoute
+  StrategiesRoute: typeof StrategiesRoute
+  WelcomeRoute: typeof WelcomeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assessment': {
+      id: '/assessment'
+      path: '/assessment'
+      fullPath: '/assessment'
+      preLoaderRoute: typeof AssessmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/debts': {
+      id: '/debts'
+      path: '/debts'
+      fullPath: '/debts'
+      preLoaderRoute: typeof DebtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/difficulty': {
+      id: '/difficulty'
+      path: '/difficulty'
+      fullPath: '/difficulty'
+      preLoaderRoute: typeof DifficultyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment': {
+      id: '/payment'
+      path: '/payment'
+      fullPath: '/payment'
+      preLoaderRoute: typeof PaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan': {
+      id: '/plan'
+      path: '/plan'
+      fullPath: '/plan'
+      preLoaderRoute: typeof PlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/revised-plan': {
+      id: '/revised-plan'
+      path: '/revised-plan'
+      fullPath: '/revised-plan'
+      preLoaderRoute: typeof RevisedPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strategies': {
+      id: '/strategies'
+      path: '/strategies'
+      fullPath: '/strategies'
+      preLoaderRoute: typeof StrategiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/welcome': {
+      id: '/welcome'
+      path: '/welcome'
+      fullPath: '/welcome'
+      preLoaderRoute: typeof WelcomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssessmentRoute: AssessmentRoute,
+  CalendarRoute: CalendarRoute,
+  DebtsRoute: DebtsRoute,
+  DifficultyRoute: DifficultyRoute,
+  PaymentRoute: PaymentRoute,
+  PlanRoute: PlanRoute,
+  ProgressRoute: ProgressRoute,
+  RevisedPlanRoute: RevisedPlanRoute,
+  SettingsRoute: SettingsRoute,
+  StrategiesRoute: StrategiesRoute,
+  WelcomeRoute: WelcomeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

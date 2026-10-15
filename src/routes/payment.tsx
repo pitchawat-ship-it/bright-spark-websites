@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { PaymentView } from '@/components/debt-views';
+export const Route=createFileRoute('/payment')({head:()=>({meta:[{title:'Record a payment | AI Debt Recovery'},{name:'description',content:'Confirm actual payments and reconcile your estimated debt balance.'},{property:'og:title',content:'Record a payment | AI Debt Recovery'},{property:'og:description',content:'Confirm actual payments and reconcile your estimated debt balance.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:PaymentView});

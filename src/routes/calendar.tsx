@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { CalendarView } from '@/components/debt-views';
+export const Route=createFileRoute('/calendar')({head:()=>({meta:[{title:'Payment calendar | AI Debt Recovery'},{name:'description',content:'See payment deadlines, statuses and visible in-app reminders.'},{property:'og:title',content:'Payment calendar | AI Debt Recovery'},{property:'og:description',content:'See payment deadlines, statuses and visible in-app reminders.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:CalendarView});

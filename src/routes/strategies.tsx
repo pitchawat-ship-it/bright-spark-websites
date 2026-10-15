@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Strategies } from '@/components/debt-views';
+export const Route=createFileRoute('/strategies')({head:()=>({meta:[{title:'Repayment strategies | AI Debt Recovery'},{name:'description',content:'Compare avalanche and snowball strategies using deterministic financial calculations.'},{property:'og:title',content:'Repayment strategies | AI Debt Recovery'},{property:'og:description',content:'Compare avalanche and snowball strategies using deterministic financial calculations.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:Strategies});

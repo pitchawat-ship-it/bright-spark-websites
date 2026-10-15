@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { PlanView } from '@/components/debt-views';
+export const Route=createFileRoute('/plan')({head:()=>({meta:[{title:'My repayment plan | AI Debt Recovery'},{name:'description',content:'Review your confirmed monthly repayment allocations and estimated payoff date.'},{property:'og:title',content:'My repayment plan | AI Debt Recovery'},{property:'og:description',content:'Review your confirmed monthly repayment allocations and estimated payoff date.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:PlanView});
