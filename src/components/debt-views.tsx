@@ -6,7 +6,8 @@ import { toast } from 'sonner';
 import { lovable } from '@/integrations/lovable/index';
 import { useDebt, useFigures, empty } from '@/lib/debt/store';
 import { assessment, debtSchema, profileSchema, simulate, signature, type Debt, type Profile, type Strategy } from '@/lib/debt/engine';
-import { PageHeading, Panel, Money, Modal, Notice } from './debt-shared';
+import { PageHeading, Panel, Money, Modal, Notice, formatMoney } from './debt-shared';
+import { speakText } from '@/lib/voice.functions';
 import { BalanceChart, Upcoming, paymentStatus } from './debt-dashboard';
 import pathImage from '@/assets/financial-path.jpg';
 function report(e:unknown){toast.error(e instanceof Error?e.message:'Something went wrong. Please try again.');}
