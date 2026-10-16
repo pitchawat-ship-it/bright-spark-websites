@@ -7,7 +7,7 @@ const MODEL_ID = "eleven_multilingual_v2";
 export const speakText = createServerFn({ method: "POST" })
   .inputValidator(z.object({ text: z.string().trim().min(1).max(1200) }))
   .handler(async ({ data }) => {
-    const apiKey = process.env.ELEVENLABS_API_KEY;
+    const apiKey = process.env["ELEVENLABS_API_KEY"];
     if (!apiKey) throw new Error("Voice is not connected to this project.");
     const res = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`,
